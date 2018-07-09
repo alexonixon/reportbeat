@@ -86,7 +86,7 @@ low(adapter)
                         } else {
                             queries.post(db, { name: req.body.name, email: req.body.email })
                                 .then(() => {
-                                    let t = new hearts({ name: req.body.name, email: req.body.email, interval: 5000 })
+                                    let t = new hearts({ name: req.body.name, email: req.body.email })
                                     allHearts.push(t)
                                     res.status(200).send('rule created')
 

@@ -18,7 +18,7 @@ class Heart{
     this.name = config.name
     this.email = config.email
     this.msg = 'ololo'
-    this.interval = config.interval || 30000 //|| 15*60*1000
+    this.interval = config.interval || 300000 //|| 15*60*1000
     this.timer = setInterval(this.sendMail.bind(this), this.interval)
   }
 
