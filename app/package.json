@@ -1,0 +1,21 @@
+{
+  "name": "reportbeat",
+  "version": "1.0.0",
+  "description": "report to email status massege if somfing wrong...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "*",
+    "express": "*",
+    "gc-storage-files": "^1.0.8",
+    "lowdb": "*",
+    "underscore": "*"
+  },
+  "keywords": [
+    "report"
+  ],
+  "author": "Sergeev A. V.",
+  "license": "ISC"
+}

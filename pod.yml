@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: get-site-lang
+  labels:
+    app: get-site-lang
+spec:
+  restartPolicy: Never
+  containers:
+  - image: us.gcr.io/nitra-p/get-site-lang
+    imagePullPolicy: Always
+    name: get-site-lang
+    env:
+    - name: URL
+      value: "http://32.com.ua"
+    - name: KEY
+      value: "32.com.ua"         
