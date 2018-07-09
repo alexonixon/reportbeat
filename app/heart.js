@@ -1,3 +1,5 @@
+const email 	= require('emailjs/email');
+
 class Heart{
 
 /*
@@ -15,7 +17,7 @@ class Heart{
     if (!config.email) throw new Error(' email dont set')
     this.name = config.name
     this.email = config.email
-    this.status = true
+    this.msg = 'ololo'
     this.interval = config.interval || 30000 //|| 15*60*1000
     this.timer = setInterval(this.sendMail.bind(this), this.interval)
   }
@@ -29,10 +31,20 @@ class Heart{
   get Interval () { return this.interval }
   set Interval (interval) { this.interval = interval }
 
+  get Msg () { return this.msg }
+  set Msg (msg) { this.msg = msg }
+
 }
 
 Heart.prototype.sendMail = function () {
     console.log(this.name + ' send email...')
+    send(this.msg, this.email).then((msg) => {
+        console.log('email send success')
+        console.log(msg)
+    })
+    .catch((err) => {
+        console.log('err - ',  err)
+    })
 }
 
 Heart.prototype.clearTimer = function () {
@@ -41,6 +53,28 @@ Heart.prototype.clearTimer = function () {
 
 Heart.prototype.setInterval = function () {
     this.timer = setInterval(this.sendMail.bind(this), this.interval)
+}
+
+function send(msg, mail) {
+    return new Promise((resolve, reject) => {
+        let server = email.server.connect({
+            user: "reportfromheart",
+            password: "cfrehf26",
+            host: "smtp.gmail.com",
+            ssl: true
+        })
+        server.send({
+            text: "from reportheart",
+            from: "reportheart <reportfromheart@gmail.com>",
+            to: 'someone <' + mail + '>',
+            subject: msg
+        }, ((err, message) => {;
+            if (err){
+                return reject(err)
+            }
+            return resolve(message)
+        }));
+    })
 }
 
 module.exports = Heart

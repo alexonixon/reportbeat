@@ -1,4 +1,9 @@
 {
   "mysql": [
+    {
+      "name": "test2",
+      "email": "sergeevnitralabs@gmail.com",
+      "id": "1531145705989"
+    }
   ]
 }

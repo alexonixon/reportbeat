@@ -11,7 +11,8 @@
     "express": "*",
     "gc-storage-files": "^1.0.8",
     "lowdb": "*",
-    "underscore": "*"
+    "underscore": "*",
+    "emailjs": "*"
   },
   "keywords": [
     "report"
