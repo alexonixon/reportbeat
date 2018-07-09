@@ -1,36 +1,34 @@
 # reportbeat
 service with API for report to email message if something wrong
 
-how to use...
+## how to use...
 
-## create new check service:
-
-
+### create new check service:
 
 curl -d "name=test2&&email=sergeevnitralabs@gmail.com" -H "Content-Type: application/x-www-form-urlencoded" -X POST http://<ip:port>/service - post request with params name, email
 
 name - unique name for service
 email - email for reports
 default interval 30 min
-you see - "rule created"
+you see somthing that - "rule created"
 
-## get created check service:
+### get created check service:
 
 curl http://<ip:port>/service/<name> - get request
-you get response, something that - {"name":"test2","email":"sergeevnitralabs@gmail.com","id":"1531148148088"}
+you see something that - {"name":"test2","email":"sergeevnitralabs@gmail.com","id":"1531148148088"}
 
-## get all check services:
+### get all check services:
 
 curl http://<ip:port>/service - get request
 
-## delete check service:
+### delete check service:
 
-curl http://<ip:port>/delete/service/<name> get request
-you see something - "delete successfully"
+curl http://<ip:port>/delete/service/<name> - get request
+you see something that - "delete successfully"
 
-## reset timer when all good
+### reset timer when all good
 
 curl http://<ip:port>/heart/<name> - post request with params status='ok'
-you see something - "reset timer" 
+you see something that - "reset timer"
 
 
