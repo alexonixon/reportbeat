@@ -18,7 +18,7 @@ class Heart{
     this.name = config.name
     this.email = config.email
     this.msg = 'report from heartbead - service: ' + this.name +' unreachable'
-    this.interval = config.interval || 60000 //|| 15*60*1000
+    this.interval = config.interval || 1800000 //|| 15*60*1000
     this.timer = setInterval(this.sendMail.bind(this), this.interval)
   }
 
