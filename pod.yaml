@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
         - name: heartbeat
-          image: asergeev/heartbeat
+          image: asergeev/heartbead
           ports:
             - name: http-port
               containerPort: 3001
