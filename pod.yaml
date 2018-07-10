@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
         - name: heartbeat
-          image: asergeev/heartbead
+          image: asergeev/heartbead:2
           ports:
             - name: http-port
               containerPort: 3001
@@ -20,4 +20,6 @@ spec:
               mountPath: /database
       volumes:
         - name: bd
-          emptyDir: {}       
+          gcePersistentDisk:
+            pdName: report-heartbead
+            fsType: ext4      

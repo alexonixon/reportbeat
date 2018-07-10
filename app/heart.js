@@ -64,10 +64,10 @@ function send(msg, mail) {
             ssl: true
         })
         server.send({
-            text: "from reportheart",
+            text: msg,
             from: "reportheart <reportfromheart@gmail.com>",
             to: 'someone <' + mail + '>',
-            subject: msg
+            subject: "from reportheat"
         }, ((err, message) => {;
             if (err){
                 return reject(err)
