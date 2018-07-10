@@ -5,7 +5,8 @@ let bodyParser = require('body-parser');
 const _ = require('underscore')
 const low = require('lowdb')
 const FileAsync = require('lowdb/adapters/FileAsync')
-const adapter = new FileAsync('/database/rules.json')
+//const adapter = new FileAsync('/database/rules.json')
+const adapter = new FileAsync('./rules.json')
 const queries = require('./queries')
 let hearts = require('./heart')
 const mails = require('./conf')
@@ -60,8 +61,22 @@ low(adapter)
                     }
                 }
             }
+            if (req.body.status === 'bad' || req.body.status !== 'ok') {
+                for (let i = 0; i < allHearts.length; i++) {
+                    if (req.params.name === allHearts[i].name) {
+                        // console.log('reset timer - ', allHearts[i] )
+                        allHearts[i].clearTimer()
+                        allHearts[i].setInterval()
+                        allHearts[i].msg = req.body.msg || allHearts.msg
+                        allHearts[i].sendMail()
+                        code = 201
+                    }
+                }
+            }
             if (code === 200) { res.status(code).send('reset timer') }
-            else { res.status(code).send('Not Found') }
+            if (code === 201) { res.status(code).send('send bad msg to mail') }
+            if (code === 404) { res.status(code).send('Not Found') }
+            if (code === 500) { res.status(code).send('error') }
         })
 
         app.get('/service', (req, res) => {

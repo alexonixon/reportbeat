@@ -17,8 +17,8 @@ class Heart{
     if (!config.email) throw new Error(' email dont set')
     this.name = config.name
     this.email = config.email
-    this.msg = 'ololo'
-    this.interval = config.interval || 900000 //|| 15*60*1000
+    this.msg = 'report from heartbead - service: ' + this.name +' unreachable'
+    this.interval = config.interval || 60000 //|| 15*60*1000
     this.timer = setInterval(this.sendMail.bind(this), this.interval)
   }
 
