@@ -1,6 +1,15 @@
 # reportbeat
 service with API for report to email message if something wrong
 
+### install/run 
+
+build...
+docker build -t <name_image> .
+run...
+docker run -dti -p 3001:3001 -v $(pwd):/database <name_image>
+and after you will get acces to api http://ip:3001/... 
+describe api bellow:
+
 ## how to use...
 
 ### create new check service:
