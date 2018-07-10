@@ -10,8 +10,8 @@ spec:
         app: heartbeat
     spec:
       containers:
-        - name: asergeev/heartbeat
-          image: heartbeat
+        - name: heartbeat
+          image: asergeev/heartbeat
           ports:
             - name: http-port
               containerPort: 3001
