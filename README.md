@@ -42,8 +42,8 @@ you see something that - "delete successfully"
 
 ### reset timer when all good
 
-curl http://<ip:port>/heart/<name> - post request with params status='ok'
+curl http://<ip:port>/heart/name - post request with params status='ok'
 you see something that - "reset timer"
 
-curl http://<ip:port>/heart/<name> - post request with params status='bad' or something else, msg='<body>'
+curl http://<ip:port>/heart/name - post request with params status='bad' or something else, msg='<body>'
 you see something "send bad msg to mail"
