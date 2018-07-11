@@ -28,22 +28,22 @@ you see somthing that - "rule created"
 
 ### get created check service:
 
-curl http://<ip:port>/service/<name> - get request
+curl http://ip:port/service/name - get request
 you see something that - {"name":"test2","email":"sergeevnitralabs@gmail.com","id":"1531148148088"}
 
 ### get all check services:
 
-curl http://<ip:port>/service - get request
+curl http://ip:port/service - get request
 
 ### delete check service:
 
-curl http://<ip:port>/delete/service/<name> - get request
+curl http://ip:port/delete/service/name - get request
 you see something that - "delete successfully"
 
 ### reset timer when all good
 
-curl http://<ip:port>/heart/name - post request with params status='ok'
+curl http://ip:port/heart/name - post request with params status='ok'
 you see something that - "reset timer"
 
-curl http://<ip:port>/heart/name - post request with params status='bad' or something else, msg='<body>'
+curl http://ip:port/heart/name - post request with params status='bad' or something else, msg='<body>'
 you see something "send bad msg to mail"
