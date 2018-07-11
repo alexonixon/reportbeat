@@ -40,7 +40,7 @@ curl http://ip:port/service - get request
 curl http://ip:port/delete/service/name - get request
 you see something that - "delete successfully"
 
-### reset timer when all good
+### reset timer/send mail when all good/bad
 
 curl http://ip:port/heart/name - post request with params status='ok'
 you see something that - "reset timer"
